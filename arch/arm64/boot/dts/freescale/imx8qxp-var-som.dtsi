@@ -56,7 +56,7 @@
 			"Playback", "CPU-Playback",
 			"CPU-Capture", "Capture";
 		codec-master;
-		status = "okay";
+		status = "disabled";
 	};
 };
 
@@ -77,7 +77,7 @@
 	assigned-clock-rates = <786432000>, <49152000>, <12288000>, <49152000>;
 	pinctrl-names = "default";
 	pinctrl-0 = <&pinctrl_sai1>;
-	status = "okay";
+	status = "disabled";
 };
 
 &sai4 {
@@ -156,7 +156,7 @@
 	clock-frequency = <100000>;
 	pinctrl-names = "default";
 	pinctrl-0 = <&pinctrl_lpi2c0>;
-	status = "okay";
+	status = "disabled";
 
 	wm8904: codec@1a {
 		compatible = "wlf,wm8904";
@@ -187,7 +187,7 @@
 			0xffff /* GPIO3 => don't touch */
 			0xffff /* GPIO4 => don't touch */
 		>;
-		status = "okay";
+		status = "disabled";
 	};
 };
 
@@ -206,7 +206,7 @@
 	rpc-region = <&decoder_rpc>;
 	reg-csr = <0x2d040000>;
 	core_type = <1>;
-	status = "okay";
+	status = "disabled";
 };
 
 &vpu_encoder {
@@ -219,7 +219,7 @@
 	mboxes = <&mu1_m0 0 0
 		  &mu1_m0 0 1
 		  &mu1_m0 1 0>;
-	status = "okay";
+	status = "disabled";
 
 	core0@1020000 {
 		compatible = "fsl,imx8-mu1-vpu-m0";
@@ -234,11 +234,11 @@
 };
 
 &jpegdec {
-	status = "okay";
+	status = "disabled";
 };
 
 &jpegenc {
-	status = "okay";
+	status = "disabled";
 };
 
 &thermal_zones {
@@ -277,7 +277,7 @@
 	pinctrl-names = "default";
 	pinctrl-0 = <&pinctrl_lpspi3>;
 	cs-gpios = <&lsio_gpio0 16 GPIO_ACTIVE_LOW>;
-	status = "okay";
+	status = "disabled";
 
 	/* Resistive touch controller */
 	ads7846@0 {
@@ -300,7 +300,7 @@
 		ti,debounce-rep = /bits/ 16 <1>;
 		ti,settle-delay-usec = /bits/ 16 <150>;
 		ti,keep-vref-on;
-		status = "okay";
+		status = "disabled";
 	};
 };
 
